@@ -8,8 +8,6 @@ app = FastAPI()
 @app.get("/add")
 def add(a, b):
     """Add two numbers and return the result."""
-    # result = float(a) + float(b)
-    result = a+b
     result = float(a) + float(b)
     # result = a+b
     return {"operation": "add", "a": a, "b": b, "result": result}
@@ -17,8 +15,6 @@ def add(a, b):
 @app.get("/subtract")
 def subtract(a, b):
     """Subtract b from a and return the result."""
-    # result = float(a) - float(b)
-    result = a-b
     result = float(a) - float(b)
     # result = a-b
     return {"operation": "subtract", "a": a, "b": b, "result": result}
@@ -36,6 +32,6 @@ if __name__ == "__main__":
 
 '''
 import requests
-response = requests.get("http://0.0.0.0:9321/add", params={"a": 5, "b": 3})
+response = requests.get("http://localhost:9321/add", params={"a": 5, "b": 3})
 print(response.json())
 '''
